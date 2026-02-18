@@ -1,0 +1,36 @@
+@use '../abstract/mixin.scss' as mixin;
+
+.play-btn{
+    background-color: #F0EA6E;
+    @include mixin.flex-center(row);
+    gap: 40px;
+    padding: 24px;
+    margin-top: 85px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+        .play-btn-controller{
+            transform:rotate(-45deg);
+        }
+        .play-btn-arrow{
+            transform: scale(1.2);
+        }
+    }
+    
+    .play-btn-controller{
+        width: 44px;
+        height: 32px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .play-btn-arrow{
+        transition: transform 0.3s ease-in-out;
+    }
+    span{
+        font-family: 'Red Rose';
+        font-size: 40px;
+        color: black;
+        font-weight: 700;
+    }
+}

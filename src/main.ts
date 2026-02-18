@@ -1,1 +1,0 @@
-document.getElementById('überschrift')!.innerText='Vite funktioniert';

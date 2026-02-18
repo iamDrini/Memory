@@ -1,0 +1,41 @@
+@use '../abstract/mixin' as mixin;
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #303131;
+    @include mixin.flex-center(column);
+    gap: 150px;
+    position: relative;
+    h1 {
+        font-family: 'Red Rose';
+        font-weight: 700;
+        font-size: 160px;
+        color: #F0EA6E;
+    }
+    .controller-bg{
+        position:absolute;
+        left:0;
+        bottom:0;
+    }
+}
+
+.start-container {
+    div {
+        @include mixin.flex-center(column);
+    }
+
+    span {
+        font-family: 'Almarai';
+        font-weight: 400;
+        font-size: 48px;
+        color: white;
+    }
+
+    h2 {
+        font-family: 'Red Rose';
+        font-weight: 700;
+        font-size: 120px;
+        color: white;
+    }
+}
