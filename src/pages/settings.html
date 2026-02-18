@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Memory</title>
+    <link rel="stylesheet" href="/src/main.scss">
+</head>
+
+<body>
+    <main class="settings-screen">
+        <div class="settings-container">
+            <section class="setting-section">
+                <div class="title-wrapper">
+                    <div class="diamant-border"></div>
+                    <h1>Settings</h1>
+                </div>
+                <div class="settings-wrapper">
+                    <div class="title-container">
+                        <img src="../assets/img/game/palette.png">
+                        <h2>Game themes</h2>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-wrapper" data-theme="code">
+                            <input id="code" type="radio" name="theme" value="code"><label for="code">Code vibes
+                                theme</label>
+                            <img src="../assets/img/game/code.png" class="pv-code">
+                        </div>
+                        <div class="input-wrapper" data-theme="gaming">
+                            <input id="gaming" type="radio" name="theme" value="gaming"><label for="gaming">Gaming
+                                theme</label>
+                            <img src="../assets/img/game/gaming.png" class="pv-gaming">
+                        </div>
+                        <div class="input-wrapper" data-theme="da">
+                            <input id="da" type="radio" name="theme" value="da"><label for="da">DA Projects
+                                theme</label>
+                            <img src="../assets/img/game/da.png" class="pv-da">
+                        </div>
+                        <div class="input-wrapper" data-theme="foods">
+                            <input id="foods" type="radio" name="theme" value="foods"><label for="foods">Foods
+                                theme</label>
+                            <img src="../assets/img/game/foods.png" class="pv-foods">
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-wrapper">
+                    <div class="title-container">
+                        <img src="../assets/img/game/chess_pawn.png">
+                        <h2>Choose player</h2>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-wrapper"><input id="player1" type="radio" name="player" value="blue"><label
+                                for="player1">Blue</label>
+                        </div>
+                        <div class="input-wrapper"><input id="player2" type="radio" name="player" value="orange"><label
+                                for="player2">Orange</label></div>
+                    </div>
+                    <div class="settings-wrapper">
+                        <div class="title-container">
+                            <img src="../assets/img/game/style.png">
+                            <h2>Board size</h2>
+                        </div>
+                        <div class="input-container">
+                            <div class="input-wrapper"><input id="small" type="radio" name="size" value="16"><label
+                                    for="small">16 cards</label>
+                            </div>
+                            <div class="input-wrapper"><input id="medium" type="radio" name="size" value="24"><label
+                                    for="medium">24 cards</label>
+                            </div>
+                            <div class="input-wrapper"><input id="big" type="radio" name="size" value="32"><label
+                                    for="big">32 cards</label></div>
+                        </div>
+                    </div>
+            </section>
+            <section class="preview-section">
+                <div class="summary-settings-container">
+                    <span id="preview-theme">Game theme</span>
+                    <img src="/src/assets/img/game/line.png" alt="">
+                    <span id="preview-player">Blue player</span>
+                    <img src="/src/assets/img/game/line.png" alt="">
+                    <span id="preview-size">Board-16 Cards</span>
+                    <button id="start-btn"><img src="/src/assets/img/game/smart_display.png"><span>Start</span></button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

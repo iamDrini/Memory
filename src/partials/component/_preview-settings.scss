@@ -1,0 +1,19 @@
+.summary-settings-container{
+    background-color: #F6F6F6;
+    padding: 14px 20px;
+    display:flex;
+    align-items: center;
+    gap: 16px;
+    span{
+        font-family: 'Almarai';
+        font-weight: 400;
+        font-size: 20px;
+    }
+    button{
+        background-color: #F0EA6E;
+        padding:14px;
+        display:flex;
+        align-items: center;
+        gap:8px;
+    }
+}
