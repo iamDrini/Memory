@@ -3,6 +3,8 @@
 .start-screen {
     width: 100vw;
     height: 100vh;
+    max-height:1080px;
+    max-width: 1920px;
     background-color: #303131;
     @include mixin.flex-center(column);
     gap: 150px;
