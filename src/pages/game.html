@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game | Memory</title>
     <link rel="stylesheet" href="/src/main.scss">
-    <script src="../scripts/game.ts"></script>
+    <link rel="stylesheet" href="/src/partials/themes/code-theme.scss">
+    <link rel="stylesheet" href="/src/partials/themes/da-theme.scss">
+    <link rel="stylesheet" href="/src/partials/themes/food-theme.scss">
+    <link rel="stylesheet" href="/src/partials/themes/gaming-theme.scss">
+    <link rel="stylesheet" href="/src/partials/pages/_game.scss">
+    <script src="./../scripts/game.ts"></script>
 </head>
-<body>
-    
+
+<body onload="renderCards()">
+    <section class="wrapper">
+        <nav>
+            <div class="score">
+                <span class="blue-player">Blue<span id="bl-points">0</span></span>
+                <span class="orange-player">Orange<span id="or-points">0</span></span>
+            </div>
+            <span>Current player: <img></span>
+            <button>Exit game</button>
+        </nav>
+        <div id="card-container">
+
+        </div>
+    </section>
 </body>
+
 </html>

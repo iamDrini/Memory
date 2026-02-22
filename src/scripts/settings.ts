@@ -1,17 +1,20 @@
 const container = document.querySelector('.input-container');
-container?.addEventListener('change', () => {
+if(container)
+container.addEventListener('change', () => {
     updateSpans("theme", "preview-theme", " theme", container);
     updateStartButtonState();
 });
 
 const playerRef = document.querySelector('.input-player');
-playerRef?.addEventListener('change', () => {
+if(playerRef)
+playerRef.addEventListener('change', () => {
     updateSpans("player", "preview-player", " player", playerRef);
     updateStartButtonState();
 });
 
 const sizeRef = document.querySelector('.input-size');
-sizeRef?.addEventListener('change', () => {
+if(sizeRef)
+sizeRef.addEventListener('change', () => {
     updateSpans("size", "preview-size", " cards", sizeRef);
     updateStartButtonState();
 });
