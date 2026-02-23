@@ -9,6 +9,6 @@ function renderCards() {
 }
 
 function getCardTemplate() {
-    return `<div class="memory-backside">
-            </div>`;
+    return `<button class="memory-backside">
+            </button>`;
 }

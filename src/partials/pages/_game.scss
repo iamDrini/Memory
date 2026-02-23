@@ -1,8 +1,35 @@
+:root{
+    //nav
+    --nav-bg-color: transparent;
+    --points-bg-color: #415652;
+    --points-padding: 17px 20px;
+    --img-player1: url("../../../public/img/code_theme/img-player1.png");
+    --img-player2: url("../../../public/img/code_theme/img-player2.png");
+    --img-btn: url("../../../public/img/code_theme/img-exit.png");
+    --border-exit-btn: 1px solid #4DD5BC;
+    --padding-exit-btn: 16px 24px;
+    --bg-exit-btn: #415652;
+    --font-color: white;
+    --font-family: "Red Rose";
+    --font-size-point: 24px;
+    --font-weight-point: 700;
+    --font-size-current:  26px;
+    --font-weight-current: 400;
+    --font-size-btn: 24px;
+    --font-weight-btn: 700px;
+    //game
+    --main-bg-color: #303131;
+    --img-bg: url("../../../public/img/code_theme/card-coding.png");
+}
+
 .wrapper{
     min-height:100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--main-bg-color);
+    color: var(--font-color);
+    font-family: var(--font-family);
     nav{
         width:100%;
         display:flex;
@@ -10,15 +37,74 @@
         align-items: center;
         padding: 38px 111px;
         box-sizing: border-box;
+        background-color: var(--nav-bg-color);
+        .current-player{
+            display:flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .score{
+            background-color: var(--points-bg-color);
+            padding: var(--points-padding);
+            font-family: var(--font-family);
+            font-size: var(--font-size-point);
+            display: flex;
+            align-items: center;
+            .img-player1{
+                background-image: var(--img-player1);
+                width: 24px;
+                height: 20px;
+            }
+            .img-player2{
+                background-image: var(--img-player2);
+                width: 24px;
+                height: 20px;
+                margin-left: 16px;
+            }
+            #bl-points{
+                color: #2bb1ff;
+                padding-left: 6px;
+            }
+            #or-points{
+                color: #f58e39;
+                padding-left: 6px;
+            }
+        }
+        #current-player-img{
+            background-image: var(--img-player1);
+            width: 24px;
+            height: 20px;
+        }
+        .exit-btn{
+            font-family: var(--font-family);
+            color: var(--font-color);
+            font-weight: var(--font-weight-btn);
+            background-color: var(--bg-exit-btn);
+            display:flex;
+            align-items: center;
+            gap: 8px;
+            padding: var(--padding-exit-btn);
+            border: var(--border-exit-btn);
+            .img-btn{
+                background-image: var(--img-btn);
+                width: 25px;
+                height: 22px;
+            }
+        }
     }
+}
+
+.score{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
 }
 
 
 #card-container{
-    width: 900px;
     display:flex;
     flex-wrap: wrap;
-    gap: 16px;
 }
 
 .memory-backside{

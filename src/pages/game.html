@@ -11,20 +11,21 @@
     <link rel="stylesheet" href="/src/partials/themes/food-theme.scss">
     <link rel="stylesheet" href="/src/partials/themes/gaming-theme.scss">
     <link rel="stylesheet" href="/src/partials/pages/_game.scss">
+    <link rel="stylesheet" href="/src/partials/layout/_board-size.scss">
     <script src="./../scripts/game.ts"></script>
 </head>
 
 <body onload="renderCards()">
     <section class="wrapper">
-        <nav>
+        <nav class="game-nav">
             <div class="score">
-                <span class="blue-player">Blue<span id="bl-points">0</span></span>
-                <span class="orange-player">Orange<span id="or-points">0</span></span>
+                <div class="img-player1"></div><span id="bl-points">0</span>
+                <div class="img-player2"></div><span id="or-points">0</span>
             </div>
-            <span>Current player: <img></span>
-            <button>Exit game</button>
+            <span class="current-player">Current player: <div id="current-player-img"></div></span>
+            <button class="exit-btn"><div class="img-btn"></div>Exit game</button>
         </nav>
-        <div id="card-container">
+        <div id="card-container" class="small-board">
 
         </div>
     </section>
