@@ -1,91 +1,92 @@
-:root{
-    //nav
-    --nav-bg-color: transparent;
-    --points-bg-color: #415652;
-    --points-padding: 17px 20px;
-    --img-player1: url("../../../public/img/code_theme/img-player1.png");
-    --img-player2: url("../../../public/img/code_theme/img-player2.png");
-    --img-btn: url("../../../public/img/code_theme/img-exit.png");
-    --border-exit-btn: 1px solid #4DD5BC;
-    --padding-exit-btn: 16px 24px;
-    --bg-exit-btn: #415652;
-    --font-color: white;
-    --font-family: "Red Rose";
-    --font-size-point: 24px;
-    --font-weight-point: 700;
-    --font-size-current:  26px;
-    --font-weight-current: 400;
-    --font-size-btn: 24px;
-    --font-weight-btn: 700px;
-    //game
-    --main-bg-color: #303131;
-    --img-bg: url("../../../public/img/code_theme/card-coding.png");
-}
-
-.wrapper{
-    min-height:100vh;
+.wrapper {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--main-bg-color);
     color: var(--font-color);
     font-family: var(--font-family);
-    nav{
-        width:100%;
-        display:flex;
+    gap: 54px;
+
+    nav {
+        width: 100%;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 38px 111px;
         box-sizing: border-box;
         background-color: var(--nav-bg-color);
-        .current-player{
-            display:flex;
+
+        .current-player {
+            display: flex;
             align-items: center;
+            font-size: var(--font-size-current);
+            font-weight: var(--font-weight-current);
             gap: 8px;
         }
-        .score{
+
+        .score {
             background-color: var(--points-bg-color);
             padding: var(--points-padding);
             font-family: var(--font-family);
             font-size: var(--font-size-point);
             display: flex;
             align-items: center;
-            .img-player1{
+            border-radius: var(--points-border-radius);
+
+            .img-player1 {
                 background-image: var(--img-player1);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
                 width: 24px;
                 height: 20px;
             }
-            .img-player2{
+
+            .img-player2 {
                 background-image: var(--img-player2);
                 width: 24px;
                 height: 20px;
                 margin-left: 16px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
             }
-            #bl-points{
+
+            #bl-points {
                 color: #2bb1ff;
                 padding-left: 6px;
             }
-            #or-points{
+
+            #or-points {
                 color: #f58e39;
                 padding-left: 6px;
             }
         }
-        #current-player-img{
+
+        #current-player-img {
             background-image: var(--img-player1);
-            width: 24px;
-            height: 20px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 30px;
         }
-        .exit-btn{
+
+        .exit-btn {
             font-family: var(--font-family);
             color: var(--font-color);
             font-weight: var(--font-weight-btn);
+            font-size: var(--font-size-btn);
             background-color: var(--bg-exit-btn);
-            display:flex;
+            display: flex;
             align-items: center;
             gap: 8px;
             padding: var(--padding-exit-btn);
             border: var(--border-exit-btn);
-            .img-btn{
+            border-radius: var(--border-exit-btn-radius);
+
+            .img-btn {
                 background-image: var(--img-btn);
                 width: 25px;
                 height: 22px;
@@ -94,21 +95,25 @@
     }
 }
 
-.score{
+.score {
     display: flex;
     align-items: center;
     gap: 4px;
-    
+
 }
 
 
-#card-container{
-    display:flex;
+#card-container {
+    display: flex;
     flex-wrap: wrap;
 }
 
-.memory-backside{
-    background-image: var(--img-bg);
-    width: 120px;
-    height: 120px;
+.memory-backside {
+    background-image: var(--card-bg);
+    background-size: contain;
+    width: var(--card-b-width);
+    height: var(--card-b-height);
+    border-style: none;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
 }

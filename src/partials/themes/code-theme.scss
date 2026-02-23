@@ -1,1 +1,29 @@
-
+:root{
+    //nav
+    --nav-bg-color: transparent;
+    --points-bg-color: #415652;
+    --points-border-radius: 0; 
+    --points-padding: 17px 20px;
+    --img-player1: url("../../../public/img/code_theme/img-player1.png");
+    --img-player2: url("../../../public/img/code_theme/img-player2.png");
+    --img-btn: url("../../../public/img/code_theme/img-exit.png");
+    --border-exit-btn: 1px solid #4DD5BC;
+    --border-exit-btn-radius: 0;
+    --padding-exit-btn: 16px 24px;
+    --bg-exit-btn: #415652;
+    --font-color: white;
+    --font-family: "Red Rose";
+    --font-size-point: 24px;
+    --font-weight-point: 700;
+    --font-size-current:  26px;
+    --font-weight-current: 400;
+    --font-size-btn: 24px;
+    --font-weight-btn: 700px;
+    //game
+    --main-bg-color: #303131;
+    --card-b-width: 120px;
+    --card-b-height: 120px;
+    --card-bg: url("../../../public/img/code_theme/card-coding.png");
+    --card-radius: 0;
+    --card-shadow: none;
+}

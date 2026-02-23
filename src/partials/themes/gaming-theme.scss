@@ -1,0 +1,29 @@
+:root[data-theme="gaming"] {
+    //nav
+    --nav-bg-color: #535d75;
+    --points-bg-color: white;
+    --points-border-radius: 10px;
+    --points-padding: 8px 16px;
+    --img-player1: url("../../../public/img/gaming_theme/img-player1.png");
+    --img-player2: url("../../../public/img/gaming_theme/img-player2.png");
+    --img-btn: url("../../../public/img/code_theme/img-exit.png");
+    --border-exit-btn: 2px solid #E71C4F;
+    --border-exit-btn-radius: 10px;
+    --padding-exit-btn: 14px 20px;
+    --bg-exit-btn: #ED1B7614;
+    --font-color: white;
+    --font-family: "Orbitron";
+    --font-size-point: 30px;
+    --font-weight-point: 700;
+    --font-size-current: 32px;
+    --font-weight-current: 700;
+    --font-size-btn: 20px;
+    --font-weight-btn: 700px;
+    //game
+    --main-bg-color: #294f60;
+    --card-b-width: 105px;
+    --card-b-height: 120px;
+    --card-bg: url("../../../public/img/gaming_theme/card-gaming.png");
+    --card-radius: 12px;
+    --card-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
