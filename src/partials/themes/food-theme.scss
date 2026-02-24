@@ -1,0 +1,29 @@
+:root[data-theme="food"] {
+    //nav
+    --nav-bg-color: #F0E5D9;
+    --points-bg-color: white;
+    --points-border-radius: 10px;
+    --points-padding: 8px 16px;
+    --img-player1: url("../../../public/img/gaming_theme/img-player2.png");
+    --img-player2: url("../../../public/img/gaming_theme/img-player1.png");
+    --img-btn: url("../../../public/img/foods_theme/img-exit.png");
+    --border-exit-btn: 3px solid #F3832D;
+    --border-exit-btn-radius: 10px;
+    --padding-exit-btn: 14px 20px;
+    --bg-exit-btn: #FFF9F2;
+    --font-color: #F3832D;
+    --font-family: "Klee One";
+    --font-size-point: 30px;
+    --font-weight-point: 600;
+    --font-size-current: 32px;
+    --font-weight-current: 600;
+    --font-size-btn: 20px;
+    --font-weight-btn: 600;
+    //game
+    --main-bg-color: #white;
+    --card-b-width: 120px;
+    --card-b-height: 120px;
+    --card-bg: url("../../../public/img/foods_theme/card-food.png");
+    --card-radius: 0;
+    --card-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
