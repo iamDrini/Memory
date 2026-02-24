@@ -1,0 +1,29 @@
+:root[data-theme="da"] {
+    //nav
+    --nav-bg-color: #f0f3f4;
+    --points-bg-color: white;
+    --points-border-radius: 10px;
+    --points-padding: 8px 16px;
+    --img-player1: url("../../../public/img/gaming_theme/img-player1.png");
+    --img-player2: url("../../../public/img/gaming_theme/img-player2.png");
+    --img-btn: url("../../../public/img/da_theme/img-exit.png");
+    --border-exit-btn: none;
+    --border-exit-btn-radius: 10px;
+    --padding-exit-btn: 14px 20px;
+    --bg-exit-btn: #BFE5F2;
+    --font-color: #1E7594;
+    --font-family: "Figtree";
+    --font-size-point: 30px;
+    --font-weight-point: 700;
+    --font-size-current: 32px;
+    --font-weight-current: 700;
+    --font-size-btn: 20px;
+    --font-weight-btn: 700px;
+    //game
+    --main-bg-color: #white;
+    --card-b-width: 120px;
+    --card-b-height: 100px;
+    --card-bg: url("../../../public/img/da_theme/card-da.png");
+    --card-radius: 12px;
+    --card-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
