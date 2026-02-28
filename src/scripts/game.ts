@@ -1,3 +1,7 @@
+import { Card } from "./cards";
+
+
+
 function getThemeStorage() {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
