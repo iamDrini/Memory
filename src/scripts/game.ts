@@ -1,26 +1,35 @@
-import { Card } from "./cards";
+import { Card, Theme } from "./cards";
 
+class Game {
+    theme: Theme;
+    player: "blue" | "orange";
+    size:number;
+    deck: Card[];
 
-
-function getThemeStorage() {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        document.documentElement.setAttribute("data-theme", savedTheme);
-        console.log(document.documentElement.getAttribute("data-theme"));
+    constructor(theme:Theme, player: "blue" | "orange", size:number){
+        this.theme = theme;
+        this.player = player;
+        this.size = size;
+        this.deck = this.createDeck();
     }
-}
 
-function renderCards() {
-    let cardRef = document.getElementById('card-container');
-    if (cardRef)
-        cardRef.innerHTML = " ";
-    for (let i = 0; i < 16; i++) {
+    private createDeck(): Card [] {
+        return [];
+    }
+
+    renderCards() {
+        let cardRef = document.getElementById('card-container');
         if (cardRef)
-            cardRef.innerHTML += getCardTemplate();
+            cardRef.innerHTML = " ";
+        for (let i = 0; i < 16; i++) {
+            if (cardRef)
+                cardRef.innerHTML += this.getCardTemplate();
+        }
+    }
+
+    getCardTemplate() {
+        return `<button class="memory-backside">
+            </button>`;
     }
 }
 
-function getCardTemplate() {
-    return `<button class="memory-backside">
-            </button>`;
-}

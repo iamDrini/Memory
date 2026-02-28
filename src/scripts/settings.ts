@@ -42,3 +42,11 @@ function updateStartButtonState() {
 
     startButton.disabled = !allGroupsSelected;
 }
+
+function getThemeStorage() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        console.log(document.documentElement.getAttribute("data-theme"));
+    }
+}
