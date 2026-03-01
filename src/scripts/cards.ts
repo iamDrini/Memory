@@ -1,9 +1,8 @@
-export type Theme = "code" | "da" | "food" | "gaming";
+export type Theme = "code" | "da" | "foods" | "gaming";
 
 export interface Card {
     id: string;
     value: string;
-    theme: Theme;
     isFlipped: boolean;
     isMatched: boolean;
 }
@@ -49,7 +48,7 @@ export const THEME_IMAGES: Record<Theme, string[]> = {
         "switch.png",
         "tic.png"
     ],
-    food: [
+    foods: [
         "brezel.png",
         "burger.png",
         "chocolate.png",

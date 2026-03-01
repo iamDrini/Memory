@@ -20,15 +20,38 @@ function getInputValue(name: string) {
     console.log(value);
     if (name === "theme") {
         localStorage.setItem("theme", value);
+    } else if (name === "player") {
+        localStorage.setItem("player", value);
+    } else if (name === "size") {
+        localStorage.setItem("size", value);
     }
 }
 
 const themeContainer = document.querySelector('.input-container');
+const playerContainer = document.querySelector('.input-player');
+const sizeContainer = document.querySelector('.input-size');
+
 if (themeContainer) {
     themeContainer.addEventListener('change', (e) => {
         const target = e.target as HTMLInputElement;
         if (target.name === "theme") {
             getInputValue("theme");
+        }
+    });
+}
+if (playerContainer) {
+    playerContainer.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target.name === "player") {
+            getInputValue("player");
+        }
+    });
+}
+if (sizeContainer) {
+    sizeContainer.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        if (target.name === "size") {
+            getInputValue("size");
         }
     });
 }
