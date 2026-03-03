@@ -23,7 +23,14 @@ class Game {
 
         if (this.theme) {
         document.documentElement.setAttribute("data-theme", this.theme);
-    }
+        }
+        const containerRef = document.getElementById('card-container');
+        if(size==16){
+            containerRef?.classList.add("small-board");
+        }else if(size==24|| 32){
+            containerRef?.classList.add("medium-big-board");
+        }
+    
     }
 
     private createDeck(size: number, theme: Theme): Card[] {
