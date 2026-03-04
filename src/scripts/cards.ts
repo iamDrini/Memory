@@ -1,4 +1,4 @@
-export type Theme = "code" | "da" | "foods" | "gaming";
+export type Theme = "code" | "da" | "foods";
 
 export interface Card {
     id: string;
@@ -67,25 +67,5 @@ export const THEME_IMAGES: Record<Theme, string[]> = {
         "vanilla.png",
         "wings.png",
         "wrap.png"
-    ],
-    gaming: [
-        "ace.png",
-        "banana.png",
-        "circle.png",
-        "coin.png",
-        "controller.png",
-        "dice.png",
-        "gameboy.png",
-        "level.png",
-        "maze.png",
-        "monster.png",
-        "pac.png",
-        "pacman.png",
-        "play.png",
-        "puzzle.png",
-        "snake.png",
-        "square.png",
-        "toad.png",
-        "triangle.png"
     ]
 };

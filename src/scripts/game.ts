@@ -71,10 +71,11 @@ class Game {
 
     getCardTemplate(card: Card) {
         const imgSrc = `./../../public/img/${this.theme}_theme/cards/${card.value}`;
-        const flippedClass = card.isFlipped ? "flipped" : "";
-        return `<button class="memory-backside ${flippedClass}" data-id="${card.id}">
-            <img src="${imgSrc}" alt="${card.value}" />
-        </button>`;
+        return `<button onclick="flipCard('${card.id}')" class="card" id="${card.id}">
+                    <div class="card__inner">
+                        <div class="card__face"></div>
+                        <div class="card__face card__face--back"></div>
+                    </div>
+                </button>`;
     }
 }
-

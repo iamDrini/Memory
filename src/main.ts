@@ -55,3 +55,11 @@ if (sizeContainer) {
         }
     });
 }
+
+function flipCard(id:string){
+    const cardRef = document.getElementById(`${id}`);
+    if(cardRef)
+        cardRef.classList.toggle("is-flipped");
+    console.log(id + "es greift");
+    
+}
