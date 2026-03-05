@@ -14,6 +14,7 @@ class Game {
     theme: Theme;
     player: "blue" | "orange";
     deck: Card[];
+    flippedCards: string[] = [];
 
     constructor(theme:Theme, player: "blue" | "orange", size:number){
         this.theme = theme;
@@ -67,15 +68,105 @@ class Game {
         this.deck.forEach(card => {
             cardRef.innerHTML += this.getCardTemplate(card);
         });
+        this.attachCardListeners();
     }
 
     getCardTemplate(card: Card) {
         const imgSrc = `./../../public/img/${this.theme}_theme/cards/${card.value}`;
-        return `<button onclick="flipCard('${card.id}')" class="card" id="${card.id}">
+        const flippedClass = card.isFlipped ? "flipped" : "";
+        return `<button class="card" id="${card.id}">
                     <div class="card__inner">
                         <div class="card__face"></div>
-                        <div class="card__face card__face--back"></div>
+                        <div class="card__face card__face--back"><img src="${imgSrc}"></div>
                     </div>
                 </button>`;
+    }
+
+    attachCardListeners() {
+        this.deck.forEach(card => {
+            const cardElement = document.getElementById(card.id);
+            if (cardElement) {
+                cardElement.addEventListener('click', () => this.flipCard(card.id));
+            }
+        });
+    }
+
+    flipCard(id: string) {
+        // Prüfen ob bereits 2 Karten umgedreht sind
+        if (this.flippedCards.length >= 2) {
+            return;
+        }
+        
+        const cardRef = document.getElementById(id);
+        if (!cardRef) return;
+        
+        // Prüfen ob Karte bereits umgedreht ist
+        if (cardRef.classList.contains("is-flipped")) {
+            return;
+        }
+        
+        // Karte umdrehen
+        cardRef.classList.add("is-flipped");
+        this.flippedCards.push(id);
+        
+        // Wenn 2 Karten umgedreht sind, prüfen ob sie gleich sind
+        if (this.flippedCards.length === 2) {
+            setTimeout(() => {
+                this.checkMatch();
+            }, 1000);
+        }
+    }
+
+    checkMatch() {
+        const [firstId, secondId] = this.flippedCards;
+        const firstCard = this.deck.find(card => card.id === firstId);
+        const secondCard = this.deck.find(card => card.id === secondId);
+        
+        if (!firstCard || !secondCard) {
+            this.resetCards();
+            return;
+        }
+        
+        // Prüfen ob die Werte gleich sind
+        if (firstCard.value === secondCard.value) {
+            // Match gefunden!
+            firstCard.isMatched = true;
+            secondCard.isMatched = true;
+            
+            // Karten als matched markieren
+            const firstCardElement = document.getElementById(firstId);
+            const secondCardElement = document.getElementById(secondId);
+            
+            if (firstCardElement) firstCardElement.classList.add("is-matched");
+            if (secondCardElement) secondCardElement.classList.add("is-matched");
+            
+            // Punkt vergeben
+            this.addPoint();
+            
+            // Array zurücksetzen ohne Karten zurückzudrehen
+            this.flippedCards = [];
+        } else {
+            // Kein Match - Karten zurückdrehen
+            this.resetCards();
+        }
+    }
+
+    addPoint() {
+        // Punkt für aktuellen Spieler hinzufügen
+        const pointsElement = document.getElementById(this.player === "blue" ? "bl-points" : "or-points");
+        if (pointsElement) {
+            const currentPoints = parseInt(pointsElement.textContent || "0");
+            pointsElement.textContent = (currentPoints + 1).toString();
+        }
+    }
+
+    resetCards() {
+        this.flippedCards.forEach(id => {
+            const cardRef = document.getElementById(id);
+            if (cardRef) {
+                cardRef.classList.remove("is-flipped");
+            }
+        });
+        this.flippedCards = [];
     }
 }

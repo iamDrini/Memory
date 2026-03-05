@@ -1,27 +1,38 @@
 .card{
-    height: 100px;
-    aspect-ratio: 1/1;
+    width: var(--card-b-width);
+    height: var(--card-b-height);
+    border-style: none;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+
     
     &__inner{
         position: relative;
         width: 100%;
         height: 100%;
         transition: all 300ms ease-in-out;
+        transform-style: preserve-3d;
     }
 
     &__face{
         position:absolute;
         inset: 0;
-        background-color: black;
+        background-image: var(--card-bg);
+        background-size: contain;
         backface-visibility: hidden;
-
+    
         &--back{
             transform: rotateY(180deg);
-            background-color: red;
+            background-image: none;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
     &.is-flipped .card__inner{
         transform: rotateY(180deg);
-        background-color: red;
     }
 }
