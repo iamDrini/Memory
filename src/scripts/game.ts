@@ -1,12 +1,14 @@
 import { Card, Theme, THEME_IMAGES } from "./cards";
 
-// Initialisierung beim Laden der Seite
+// Attribute SOFORT setzen beim Script-Laden
+const theme = (localStorage.getItem("theme") as Theme) || "code";
+const player = (localStorage.getItem("player") as "blue" | "orange") || "blue";
+const size = Number(localStorage.getItem("size")) || 16;
+
+document.documentElement.setAttribute("data-theme", theme);
+document.documentElement.setAttribute("data-player", player);
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Einstellungen aus localStorage holen
-    const theme = (localStorage.getItem("theme") as Theme) || "code";
-    const player = (localStorage.getItem("player") as "blue" | "orange") || "blue";
-    const size = Number(localStorage.getItem("size")) || 16;
-    // Game erzeugen und Karten rendern
     const game = new Game(theme, player, size);
 });
 
@@ -21,17 +23,12 @@ class Game {
         this.player = player;
         this.deck = this.createDeck(size, theme);
         this.renderCards();
-
-        if (this.theme) {
-        document.documentElement.setAttribute("data-theme", this.theme);
-        }
         const containerRef = document.getElementById('card-container');
         if(size==16){
             containerRef?.classList.add("small-board");
         }else if(size==24|| 32){
             containerRef?.classList.add("medium-big-board");
         }
-    
     }
 
     private createDeck(size: number, theme: Theme): Card[] {
@@ -92,24 +89,16 @@ class Game {
     }
 
     flipCard(id: string) {
-        // Prüfen ob bereits 2 Karten umgedreht sind
         if (this.flippedCards.length >= 2) {
             return;
         }
-        
         const cardRef = document.getElementById(id);
         if (!cardRef) return;
-        
-        // Prüfen ob Karte bereits umgedreht ist
         if (cardRef.classList.contains("is-flipped")) {
             return;
         }
-        
-        // Karte umdrehen
         cardRef.classList.add("is-flipped");
         this.flippedCards.push(id);
-        
-        // Wenn 2 Karten umgedreht sind, prüfen ob sie gleich sind
         if (this.flippedCards.length === 2) {
             setTimeout(() => {
                 this.checkMatch();
@@ -150,6 +139,7 @@ class Game {
 
     handleNoMatch() {
         this.resetCards();
+        this.switchPlayer();
     }
 
     addPoint() {
@@ -169,5 +159,14 @@ class Game {
             }
         });
         this.flippedCards = [];
+    }
+
+    switchPlayer() {
+        this.player = this.player === "blue" ? "orange" : "blue";
+        this.updateCurrentPlayerDisplay();
+    }
+
+    updateCurrentPlayerDisplay() {
+        document.documentElement.setAttribute("data-player", this.player);
     }
 }

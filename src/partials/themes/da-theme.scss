@@ -6,6 +6,7 @@
     --points-padding: 8px 16px;
     --img-player1: url("../../../public/img/da_theme/img-player1.png");
     --img-player2: url("../../../public/img/da_theme/img-player2.png");
+    --img-current-player: var(--img-player1);
     --img-btn: url("../../../public/img/da_theme/img-exit.png");
     --border-exit-btn: none;
     --border-exit-btn-radius: 10px;
@@ -26,4 +27,10 @@
     --card-bg: url("../../../public/img/da_theme/card-da.png");
     --card-radius: 12px;
     --card-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+}
+:root[data-theme="da"][data-player="blue"] {
+    --img-current-player: url("../../../public/img/da_theme/img-player1.png");
+}
+:root[data-theme="da"][data-player="orange"] {
+    --img-current-player: url("../../../public/img/da_theme/img-player2.png");
 }
