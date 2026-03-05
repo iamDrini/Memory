@@ -127,28 +127,29 @@ class Game {
             return;
         }
         
-        // Prüfen ob die Werte gleich sind
         if (firstCard.value === secondCard.value) {
-            // Match gefunden!
-            firstCard.isMatched = true;
-            secondCard.isMatched = true;
-            
-            // Karten als matched markieren
-            const firstCardElement = document.getElementById(firstId);
-            const secondCardElement = document.getElementById(secondId);
-            
-            if (firstCardElement) firstCardElement.classList.add("is-matched");
-            if (secondCardElement) secondCardElement.classList.add("is-matched");
-            
-            // Punkt vergeben
-            this.addPoint();
-            
-            // Array zurücksetzen ohne Karten zurückzudrehen
-            this.flippedCards = [];
+            this.handleMatch(firstCard, secondCard, firstId, secondId);
         } else {
-            // Kein Match - Karten zurückdrehen
-            this.resetCards();
+            this.handleNoMatch();
         }
+    }
+
+    handleMatch(firstCard: Card, secondCard: Card, firstId: string, secondId: string) {
+        firstCard.isMatched = true;
+        secondCard.isMatched = true;
+        
+        const firstCardElement = document.getElementById(firstId);
+        const secondCardElement = document.getElementById(secondId);
+        
+        if (firstCardElement) firstCardElement.classList.add("is-matched");
+        if (secondCardElement) secondCardElement.classList.add("is-matched");
+        
+        this.addPoint();
+        this.flippedCards = [];
+    }
+
+    handleNoMatch() {
+        this.resetCards();
     }
 
     addPoint() {
