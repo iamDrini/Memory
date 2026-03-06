@@ -21,14 +21,22 @@
     <section class="wrapper">
         <nav class="game-nav">
             <div class="score">
-                <div class="img-player1"></div><span id="bl-points">0</span>
-                <div class="img-player2"></div><span id="or-points">0</span>
+                <div class="img-player1"></div><span class="color-bl">Blue</span><span id="bl-points" class="color-bl">0</span>
+                <div class="img-player2"></div><span class="color-or">Orange</span><span id="or-points" class="color-or">0</span>
             </div>
             <span class="current-player">Current player: <div id="current-player-img"></div></span>
             <button class="exit-btn"><div class="img-btn"></div>Exit game</button>
         </nav>
         <div id="card-container">
 
+        </div>
+        <div id="scoreboard" class="scoreboard">
+            <h2>Game over</h2>
+            <h3>Finale score</h3>
+            <div class="score">
+                <div class="img-player1"></div><span class="color-bl">Blue</span><span id="bl-sb" class="color-bl">0</span>
+                <div class="img-player2"></div><span class="color-or">Orange</span><span id="or-sb" class="color-or">0</span>
+            </div>
         </div>
     </section>
 </body>

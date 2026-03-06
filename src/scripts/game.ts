@@ -143,12 +143,15 @@ class Game {
     }
 
     addPoint() {
-        // Punkt für aktuellen Spieler hinzufügen
+        if(this.checkAllMatched()){
+            this.endGame();
+        }
         const pointsElement = document.getElementById(this.player === "blue" ? "bl-points" : "or-points");
         if (pointsElement) {
             const currentPoints = parseInt(pointsElement.textContent || "0");
             pointsElement.textContent = (currentPoints + 1).toString();
         }
+        this.updateScoreboard();
     }
 
     resetCards() {
@@ -168,5 +171,30 @@ class Game {
 
     updateCurrentPlayerDisplay() {
         document.documentElement.setAttribute("data-player", this.player);
+    }
+
+    endGame(){
+        const dialogRef = document.getElementById("scoreboard");
+        if(dialogRef)
+            dialogRef.style.display = "flex";
+    }
+
+    checkAllMatched(){
+        return this.deck.every(card => card.isMatched);
+    }
+    updateScoreboard(){
+        const bluePointsElement = document.getElementById('bl-points');
+        const orangePointsElement = document.getElementById('or-points');
+        const blueRef = document.getElementById('bl-sb');
+        const orangeRef = document.getElementById('or-sb');
+        
+        if(blueRef && orangeRef && bluePointsElement && orangePointsElement){
+            blueRef.innerHTML = bluePointsElement.innerHTML;
+            orangeRef.innerHTML = orangePointsElement.innerHTML;
+        }
+    }
+
+    showWinner(){
+        
     }
 }

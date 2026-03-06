@@ -27,6 +27,9 @@
     --card-bg: url("../../../public/img/foods_theme/card-food.png");
     --card-radius: 0;
     --card-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25);
+    --scoreboard-bg-color:#f3832d;
+    --font-weight-scoreboard: 600;
+    --font-color-scoreboard: white;
 }
 
 :root[data-theme="foods"][data-player="blue"] {

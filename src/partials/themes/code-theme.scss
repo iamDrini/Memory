@@ -27,6 +27,9 @@
     --card-bg: url("../../../public/img/code_theme/card-coding.png");
     --card-radius: 0;
     --card-shadow: none;
+    --scoreboard-bg-color:#303131;
+    --font-weight-scoreboard: 700;
+    --font-color-scoreboard: #4dd5bc;
 }
 
 :root[data-theme="code"][data-player="blue"] {
