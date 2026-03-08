@@ -9,49 +9,44 @@ const exitWinRef = document.getElementById('exit-window-dialog');
 document.documentElement.setAttribute("data-theme", theme);
 document.documentElement.setAttribute("data-player", player);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const game = new Game(theme, player, size);
-});
+function addClickListener(elementId: string, handler: (e: Event) => void): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.addEventListener("click", handler);
+    }
+}
 
-const buttonHome = document.getElementById('home-btn');
-if (buttonHome) {
-    buttonHome.addEventListener("click", () => {
+function initEventListeners(): void {
+    addClickListener('home-btn', () => {
         window.location.href = "./settings.html";
     });
-}
 
-const buttonExit = document.getElementById('exit-btn');
-if (buttonExit) {
-    buttonExit.addEventListener("click", () => {
-        if (exitWinRef)
-            exitWinRef.style.display = "flex";
+    addClickListener('exit-btn', () => {
+        if (exitWinRef) exitWinRef.style.display = "flex";
     });
-}
 
-const backToGameRef = document.getElementById('back-game-btn');
-if (backToGameRef){
-    backToGameRef.addEventListener("click", () => {
-        if (exitWinRef)
-            exitWinRef.style.display = "none";
-    })
-}
-
-if (exitWinRef) {
-    exitWinRef.addEventListener("click", (e) => {
-        if (e.target === exitWinRef) {
-            exitWinRef.style.display = "none";
-        }
+    addClickListener('back-game-btn', () => {
+        if (exitWinRef) exitWinRef.style.display = "none";
     });
+
+    addClickListener('exit-game-btn', () => {
+        if (exitWinRef) exitWinRef.style.display = "none";
+        window.location.href = "./settings.html";
+    });
+
+    if (exitWinRef) {
+        exitWinRef.addEventListener("click", (e) => {
+            if (e.target === exitWinRef) {
+                exitWinRef.style.display = "none";
+            }
+        });
+    }
 }
 
-const exitGameRef = document.getElementById('exit-game-btn');
-if (exitGameRef) {
-    exitGameRef.addEventListener("click", () => {
-        if (exitWinRef)
-            exitWinRef.style.display = "none";
-        window.location.href = "./settings.html"
-    });
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const game = new Game(theme, player, size);
+    initEventListeners();
+});
 
 class Game {
     theme: Theme;
