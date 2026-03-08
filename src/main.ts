@@ -2,13 +2,13 @@
 const buttonPlay = document.getElementById('play-btn');
 if (buttonPlay)
     buttonPlay.addEventListener("click", () => {
-        window.location.href = "/src/pages/settings.html";
+        window.location.href = "./src/pages/settings.html";
     });
 
 const buttonStart = document.getElementById('start-btn');
 if (buttonStart)
     buttonStart.addEventListener("click", () => {
-        window.location.href = "/src/pages/game.html";
+        window.location.href = "./game.html";
     })
 
 function getInputValue(name: string) {

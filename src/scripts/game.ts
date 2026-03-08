@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const buttonHome = document.getElementById('home-btn');
 if (buttonHome) {
     buttonHome.addEventListener("click", () => {
-        window.location.href = "/src/pages/settings.html";
+        window.location.href = "./settings.html";
     });
 }
 
@@ -49,7 +49,7 @@ if (exitGameRef) {
     exitGameRef.addEventListener("click", () => {
         if (exitWinRef)
             exitWinRef.style.display = "none";
-        window.location.href = "/src/pages/settings.html"
+        window.location.href = "./settings.html"
     });
 }
 
@@ -110,7 +110,7 @@ class Game {
     }
 
     getCardTemplate(card: Card) {
-        const imgSrc = `./../../public/img/${this.theme}_theme/cards/${card.value}`;
+        const imgSrc = `../../img/${this.theme}_theme/cards/${card.value}`;
         const flippedClass = card.isFlipped ? "flipped" : "";
         return `<button class="card" id="${card.id}">
                     <div class="card__inner">
