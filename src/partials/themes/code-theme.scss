@@ -4,8 +4,8 @@
     --points-bg-color: #415652;
     --points-border-radius: 0; 
     --points-padding: 17px 20px;
-    --img-player1: url("../../../public/img/code_theme/img-player1.png");
-    --img-player2: url("../../../public/img/code_theme/img-player2.png");
+    --img-player1: url("../../../public/img/code_theme/img-player1.svg");
+    --img-player2: url("../../../public/img/code_theme/img-player2.svg");
     --img-current-player: url("../../../public/img/code_theme/img-player1.png");
     --img-btn: url("../../../public/img/code_theme/img-exit.png");
     --border-exit-btn: 1px solid #4DD5BC;
@@ -30,6 +30,19 @@
     --scoreboard-bg-color:#303131;
     --font-weight-scoreboard: 700;
     --font-color-scoreboard: #4dd5bc;
+    --winner-span-color: white;
+    --winner-blue-color: #2BB1FF;
+    --winner-orange-color: #EA6900;
+    --home-btn-color: white;
+    --home-btn-bg: #415652;
+    --dialog-span-color: black;
+    --bg-exit-container: white;
+    --dialog-back-bg-color: #66cfbc;
+    --dialog-exit-bg-color: #86E9D624;
+    --dialog-back-color: white;
+    --dialog-exit-color: #4DD5BC;
+    --dialog-btn-radius: 0;
+    --dialog-exit-border: 2px solid #4DD5BC;
 }
 
 :root[data-theme="code"][data-player="blue"] {

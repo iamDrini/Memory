@@ -4,8 +4,8 @@
     --points-bg-color: white;
     --points-border-radius: 10px;
     --points-padding: 8px 16px;
-    --img-player1: url("../../../public/img/foods_theme/img-player1.png");
-    --img-player2: url("../../../public/img/foods_theme/img-player2.png");
+    --img-player1: url("../../../public/img/foods_theme/img-player1.svg");
+    --img-player2: url("../../../public/img/foods_theme/img-player2.svg");
     --img-current-player: var(--img-player1);
     --img-btn: url("../../../public/img/foods_theme/img-exit.png");
     --border-exit-btn: 3px solid #F3832D;
@@ -21,7 +21,7 @@
     --font-size-btn: 20px;
     --font-weight-btn: 600;
     //game
-    --main-bg-color: #white;
+    --main-bg-color: white;
     --card-b-width: 120px;
     --card-b-height: 120px;
     --card-bg: url("../../../public/img/foods_theme/card-food.png");
@@ -30,6 +30,19 @@
     --scoreboard-bg-color:#f3832d;
     --font-weight-scoreboard: 600;
     --font-color-scoreboard: white;
+    --winner-span-color:#A45212;
+    --winner-blue-color: #2BB1FF;
+    --winner-orange-color: #EA6900;
+    --home-btn-color: white;
+    --home-btn-bg: #F3832D;
+    --dialog-span-color: #A45212;
+    --bg-exit-container: #f6f6f6;
+    --dialog-back-bg-color: #FFAB3E;
+    --dialog-exit-bg-color: #FFF9F2;
+    --dialog-back-color: white;
+    --dialog-exit-color: #F3832D;
+    --dialog-btn-radius: 10px;
+    --dialog-exit-border: 3px solid #F3832D;
 }
 
 :root[data-theme="foods"][data-player="blue"] {

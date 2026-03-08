@@ -25,17 +25,34 @@
                 <div class="img-player2"></div><span class="color-or">Orange</span><span id="or-points" class="color-or">0</span>
             </div>
             <span class="current-player">Current player: <div id="current-player-img"></div></span>
-            <button class="exit-btn"><div class="img-btn"></div>Exit game</button>
+            <button id="exit-btn" class="exit-btn"><div class="img-btn"></div>Exit game</button>
         </nav>
         <div id="card-container">
 
         </div>
         <div id="scoreboard" class="scoreboard">
             <h2>Game over</h2>
-            <h3>Finale score</h3>
+            <h3>Final score</h3>
             <div class="score">
                 <div class="img-player1"></div><span class="color-bl">Blue</span><span id="bl-sb" class="color-bl">0</span>
                 <div class="img-player2"></div><span class="color-or">Orange</span><span id="or-sb" class="color-or">0</span>
+            </div>
+        </div>
+        <div id="winner-window">
+            <img class="confetti" src="./../../public/img/game/Confetti.png">
+            <span id="draw">DRAW!</span>
+            <span id="winner-span">The winner is</span>
+            <h2 id="winner-h-bl">Blue Player</h2><h2 id="winner-h-or">Orange Player</h2>
+            <div id="winner-bl"></div><div id="winner-or"></div>
+            <button id="home-btn">Home</button>
+        </div>
+        <div id="exit-window-dialog">
+            <div id="exit-window-content">
+                <span>Are you sure you want to quit the game ?</span>
+                <div class="btn-container">
+                    <button id="back-game-btn">BACK TO GAME</button>
+                    <button id="exit-game-btn">EXIT GAME</button>
+                </div>
             </div>
         </div>
     </section>

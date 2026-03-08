@@ -4,8 +4,8 @@
     --points-bg-color: white;
     --points-border-radius: 10px;
     --points-padding: 8px 16px;
-    --img-player1: url("../../../public/img/da_theme/img-player1.png");
-    --img-player2: url("../../../public/img/da_theme/img-player2.png");
+    --img-player1: url("../../../public/img/da_theme/img-player1.svg");
+    --img-player2: url("../../../public/img/da_theme/img-player2.svg");
     --img-current-player: var(--img-player1);
     --img-btn: url("../../../public/img/da_theme/img-exit.png");
     --border-exit-btn: none;
@@ -30,6 +30,19 @@
     --scoreboard-bg-color:#1e7594;
     --font-weight-scoreboard: 700;
     --font-color-scoreboard: #fd5b4f;
+    --winner-span-color:white;
+    --winner-blue-color: white;
+    --winner-orange-color: white;
+    --home-btn-color: #1e7594;
+    --home-btn-bg: #BFE5F2;
+    --dialog-span-color: black;
+    --bg-exit-container: #f0f6f9;
+    --dialog-back-bg-color: #BFE5F2;
+    --dialog-exit-bg-color: #FD8A81;
+    --dialog-back-color: #1E7594;
+    --dialog-exit-color: white;
+    --dialog-btn-radius: 10px;
+    --dialog-exit-border: none;
 }
 :root[data-theme="da"][data-player="blue"] {
     --img-current-player: url("../../../public/img/da_theme/img-player1.png");
