@@ -1,16 +1,3 @@
-
-const buttonPlay = document.getElementById('play-btn');
-if (buttonPlay)
-    buttonPlay.addEventListener("click", () => {
-        window.location.href = "./src/pages/settings.html";
-    });
-
-const buttonStart = document.getElementById('start-btn');
-if (buttonStart)
-    buttonStart.addEventListener("click", () => {
-        window.location.href = "./game.html";
-    })
-
 function getInputValue(name: string) {
     const valueRef = document.querySelector<HTMLInputElement>(`input[name="${name}"]:checked`);
     if (!valueRef) {
@@ -27,33 +14,39 @@ function getInputValue(name: string) {
     }
 }
 
-const themeContainer = document.querySelector('.input-container');
-const playerContainer = document.querySelector('.input-player');
-const sizeContainer = document.querySelector('.input-size');
+function addClickListener(elementId: string, handler: () => void): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.addEventListener("click", handler);
+    }
+}
 
-if (themeContainer) {
-    themeContainer.addEventListener('change', (e) => {
-        const target = e.target as HTMLInputElement;
-        if (target.name === "theme") {
-            getInputValue("theme");
-        }
-    });
+function addChangeListener(selector: string, inputName: string): void {
+    const container = document.querySelector(selector);
+    if (container) {
+        container.addEventListener('change', (e) => {
+            const target = e.target as HTMLInputElement;
+            if (target.name === inputName) {
+                getInputValue(inputName);
+            }
+        });
+    }
 }
-if (playerContainer) {
-    playerContainer.addEventListener('change', (e) => {
-        const target = e.target as HTMLInputElement;
-        if (target.name === "player") {
-            getInputValue("player");
-        }
+
+function initEventListeners(): void {
+    addClickListener('play-btn', () => {
+        window.location.href = "./src/pages/settings.html";
     });
-}
-if (sizeContainer) {
-    sizeContainer.addEventListener('change', (e) => {
-        const target = e.target as HTMLInputElement;
-        if (target.name === "size") {
-            getInputValue("size");
-        }
+
+    addClickListener('start-btn', () => {
+        window.location.href = "./game.html";
     });
+
+    addChangeListener('.input-container', 'theme');
+    addChangeListener('.input-player', 'player');
+    addChangeListener('.input-size', 'size');
 }
+
+initEventListeners();
 
 
