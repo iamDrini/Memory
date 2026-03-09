@@ -155,7 +155,7 @@
     display: none;
     position: absolute;
     inset: 0;
-    background-color: var(--main-bg-color);
+    background-color: var(--scoreboard-bg-color) !important;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
