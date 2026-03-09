@@ -21,7 +21,7 @@ function addClickListener(elementId: string, handler: () => void): void {
     }
 }
 
-function addChangeListener(selector: string, inputName: string): void {
+function addChangeListenerInput(selector: string, inputName: string): void {
     const container = document.querySelector(selector);
     if (container) {
         container.addEventListener('change', (e) => {
@@ -33,20 +33,22 @@ function addChangeListener(selector: string, inputName: string): void {
     }
 }
 
-function initEventListeners(): void {
+function initEventListenersInput(): void {
     addClickListener('play-btn', () => {
         window.location.href = "./src/pages/settings.html";
     });
 
     addClickListener('start-btn', () => {
         window.location.href = "./game.html";
+        console.log("es greift");
+        
     });
 
-    addChangeListener('.input-container', 'theme');
-    addChangeListener('.input-player', 'player');
-    addChangeListener('.input-size', 'size');
+    addChangeListenerInput('.input-container', 'theme');
+    addChangeListenerInput('.input-player', 'player');
+    addChangeListenerInput('.input-size', 'size');
 }
 
-initEventListeners();
+initEventListenersInput();
 
 

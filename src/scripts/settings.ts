@@ -1,25 +1,22 @@
-const container = document.querySelector('.input-container');
-if(container)
-container.addEventListener('change', () => {
-    updateSpans("theme", "preview-theme", " theme", container);
-    updateStartButtonState();
-});
+function addChangeListener(selector: string, name: string, spanId: string, text: string): void {
+    const container = document.querySelector(selector);
+    if (container) {
+        container.addEventListener('change', () => {
+            updateSpans(name, spanId, text, container);
+            updateStartButtonState();
+        });
+    }
+}
 
-const playerRef = document.querySelector('.input-player');
-if(playerRef)
-playerRef.addEventListener('change', () => {
-    updateSpans("player", "preview-player", " player", playerRef);
-    updateStartButtonState();
-});
+function initEventListeners(): void {
+    addChangeListener('.input-container', 'theme', 'preview-theme', ' theme');
+    addChangeListener('.input-player', 'player', 'preview-player', ' player');
+    addChangeListener('.input-size', 'size', 'preview-size', ' cards');
+}
 
-const sizeRef = document.querySelector('.input-size');
-if(sizeRef)
-sizeRef.addEventListener('change', () => {
-    updateSpans("size", "preview-size", " cards", sizeRef);
-    updateStartButtonState();
-});
+initEventListeners();
 
-function updateSpans(name: string, spanId: string, text: string, group:Element) {
+function updateSpans(name: string, spanId: string, text: string, group: Element) {
     const selected = group?.querySelector<HTMLInputElement>(`input[name="${name}"]:checked`);
     const valueRef = selected?.value;
 
